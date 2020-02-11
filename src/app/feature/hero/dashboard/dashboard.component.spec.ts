@@ -1,12 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DashboardComponent } from './dashboard.component';
-import { HeroSearchComponent } from '../hero-search/hero-search.component';
-
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
-import { HEROES } from '../mock-heroes';
-import { HeroService } from '../hero.service';
+
+import { HEROES } from '../../../core/mocks/mock-heroes';
+import { HeroService } from '../../../core/services/hero.service';
+import { HeroSearchComponent } from '../hero-search/hero-search.component';
+import { DashboardComponent } from './dashboard.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

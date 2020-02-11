@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../../../core/models/hero';
+import { HeroSandbox } from '../hero.sandbox';
+
 
 @Component({
   selector: 'app-heroes',
@@ -11,21 +12,22 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private sandbox: HeroSandbox) { }
 
   ngOnInit() {
     this.getHeroes();
+    this.sandbox.logMessage(`I turned myself into a pickle. I'm Pickle Riiiiick.`)
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
+    this.sandbox.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
+    this.sandbox.addHero({ name } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });
@@ -33,7 +35,7 @@ export class HeroesComponent implements OnInit {
 
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+    this.sandbox.deleteHero(hero).subscribe();
   }
 
 }
