@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Hero } from '../../../core/models/hero';
 import { HeroService } from '../../../core/services/hero.service';
+import { FrodonService } from '../../lazy-one/frodon.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -16,7 +17,8 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private frodon: FrodonService
   ) {}
 
   ngOnInit(): void {

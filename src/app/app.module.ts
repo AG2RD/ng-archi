@@ -2,11 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HeroModule } from './feature/hero/hero.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 
 @NgModule({
   imports: [
@@ -18,11 +18,12 @@ import { HeroModule } from './feature/hero/hero.module';
     HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule,
     HeroModule,
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
+    
   
   ],
   bootstrap: [ AppComponent ]
