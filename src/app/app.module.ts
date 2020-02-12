@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HeroModule } from './feature/hero/hero.module';
+import { LazyOneModule } from './feature/lazy-one/lazy-one.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     ),
     HeroModule,
     AppRoutingModule,
+    LazyOneModule.forRoot()
   ],
   declarations: [
     AppComponent,

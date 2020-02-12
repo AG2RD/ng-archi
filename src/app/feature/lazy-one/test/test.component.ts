@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FrodonService } from '../frodon.service';
+import { SamService } from '../sam.service';
 
 @Component({
   selector: 'app-test',
@@ -9,7 +10,7 @@ import { FrodonService } from '../frodon.service';
 })
 export class TestComponent implements OnInit {
 
-  constructor(private frodon: FrodonService) { }
+  constructor(private frodon: FrodonService, private sam: SamService) { }
 
   ngOnInit() {
   }

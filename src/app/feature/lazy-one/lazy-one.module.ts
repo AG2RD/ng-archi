@@ -3,6 +3,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { FrodonService } from './frodon.service';
 import { LazyOneRoutingModule } from './routing/lazy-one-routing.module';
+import { SamService } from './sam.service';
 import { TestComponent } from './test/test.component';
 
 
@@ -21,7 +22,7 @@ export class LazyOneModule {
         return {
           ngModule: LazyOneRoutingModule,
           providers: [
-            FrodonService
+            SamService
           ]
         };
       }
